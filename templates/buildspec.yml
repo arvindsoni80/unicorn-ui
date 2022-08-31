@@ -22,7 +22,6 @@ phases:
       - echo Building the Docker image...   
       - yarn build
       - yarn build-image
- 
   post_build:
     commands:
       - echo Build completed on `date`
