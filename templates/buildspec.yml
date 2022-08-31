@@ -38,8 +38,14 @@ phases:
       - cat artifacts/imagedefinition.json
 
 artifacts:
-  name: 'frontend'
   files:
     - '**/*'
-  base-directory: 'packages/app/dist'
-  discard-paths: no
+  base-directory: 'artifacts'
+  discard-paths: yes
+  secondary-artifacts:
+    frontend:
+      name: 'frontend'
+      files:
+        - '**/*'
+      base-directory: 'packages/app/dist'
+      discard-paths: no
